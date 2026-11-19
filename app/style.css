@@ -1,0 +1,136 @@
+/* Leonida Legends — original Vice City neon look: deep night purple, sunset
+   pink/cyan/gold. No Rockstar artwork: the sun and skyline are pure CSS shapes. */
+:root {
+  --bg: #12081f;
+  --bg2: #1d0f33;
+  --card: #221239;
+  --card-earned: #17351f;
+  --line: #3a2360;
+  --text: #f2eefc;
+  --muted: #b9a8d8;
+  --pink: #ff2e88;
+  --cyan: #22d3ee;
+  --orange: #ff9a3d;
+  --gold: #ffd23d;
+  --silver: #c9d4e3;
+  --bronze: #e09a5f;
+  --platinum: #7df9ff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+}
+.hero {
+  position: relative; overflow: hidden; padding: 44px 24px 30px;
+  background: linear-gradient(180deg, #2a0f4d 0%, #4a1259 55%, #12081f 100%);
+  border-bottom: 3px solid var(--pink);
+}
+.sun {
+  position: absolute; top: -70px; right: 6%; width: 220px; height: 220px; border-radius: 50%;
+  background: radial-gradient(circle, #ffd23d 0%, #ff7a3d 55%, #ff2e88 100%);
+  opacity: .9;
+}
+.skyline {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 48px; opacity: .35;
+  background:
+    linear-gradient(90deg, transparent 0 8%, #0a0616 8% 12%, transparent 12% 20%, #0a0616 20% 26%, transparent 26% 40%, #0a0616 40% 46%, transparent 46% 58%, #0a0616 58% 66%, transparent 66% 78%, #0a0616 78% 84%, transparent 84% 100%);
+}
+.hero-text { position: relative; max-width: 980px; margin: 0 auto; }
+.kicker { color: var(--cyan); letter-spacing: .14em; text-transform: uppercase; font-size: 13px; margin: 0 0 6px; }
+h1 { font-size: 52px; margin: 0 0 8px; line-height: 1.05; letter-spacing: -.01em;
+  background: linear-gradient(90deg, #ffd23d, #ff2e88 55%, #22d3ee);
+  -webkit-background-clip: text; background-clip: text; color: transparent; }
+.tagline { color: #e8ddff; max-width: 720px; margin: 0; font-size: 17px; }
+.hero-note { color: var(--gold); max-width: 720px; margin: 10px 0 0; font-size: 14px; font-weight: 600; }
+.progress-wrap { position: relative; max-width: 980px; margin: 22px auto 0; }
+.progress-numbers { display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 6px; }
+.progress-bar { height: 14px; background: #0a0616; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--pink), var(--orange), var(--gold)); transition: width .3s; }
+.grade-summary { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
+.howto { color: var(--cyan); font-size: 13px; margin: 6px 0 0; }
+main { max-width: 980px; margin: 0 auto; padding: 0 24px 40px; }
+h2 { font-size: 26px; margin: 28px 0 8px; color: var(--gold); }
+.roadmap-intro { color: var(--muted); margin: 0 0 14px; }
+.stages { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.stages li { display: flex; gap: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+.stage-num { flex: 0 0 34px; height: 34px; border-radius: 50%; background: var(--pink); color: #fff;
+  display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 17px; }
+.stages h3 { margin: 0 0 4px; font-size: 17px; }
+.stages p { margin: 0; color: var(--muted); font-size: 15px; }
+.stages strong { color: var(--text); }
+.missable-box { margin-top: 12px; background: #3d1408; border: 1px solid #ff7a3d; border-radius: 12px; padding: 14px 16px; }
+.missable-box h3 { margin: 0 0 6px; color: var(--orange); font-size: 17px; }
+.missable-box p { margin: 0; color: #ffe3c7; font-size: 15px; }
+.controls { margin-top: 26px; background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+.control-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.search-label, .grade-label { font-weight: 700; font-size: 14px; }
+.search-label input { width: 320px; max-width: 60vw; }
+input[type="search"], select {
+  background: #0a0616; color: var(--text); border: 1px solid var(--line);
+  border-radius: 8px; padding: 8px 10px; font-size: 15px; margin-left: 6px;
+}
+input[type="search"]:focus, select:focus { outline: 2px solid var(--cyan); outline-offset: 1px; border-color: var(--cyan); }
+.kind-filters { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
+.kind-filters button {
+  background: #0a0616; color: var(--text); border: 1px solid var(--line);
+  border-radius: 999px; padding: 7px 13px; font-size: 14px; cursor: pointer;
+}
+.kind-filters button:hover { border-color: var(--pink); }
+.kind-filters button.active { background: var(--pink); border-color: var(--pink); color: #fff; font-weight: 700; }
+.kind-filters .count { opacity: .75; font-size: 12px; }
+.toggles { font-size: 14px; }
+.toggle { display: flex; gap: 6px; align-items: flex-start; cursor: pointer; }
+.toggle em { color: var(--muted); font-style: normal; font-size: 13px; }
+.spacer { flex: 1; }
+button, .import-btn {
+  background: var(--cyan); color: #04222b; border: none; border-radius: 8px;
+  padding: 8px 13px; font-size: 14px; font-weight: 700; cursor: pointer;
+}
+button:hover, .import-btn:hover { filter: brightness(1.1); }
+button.danger { background: transparent; color: #ff8fa3; border: 1px solid #ff8fa3; }
+.import-btn { background: #2c1a4d; color: var(--text); border: 1px solid var(--line); }
+.import-btn input { display: none; }
+.online-note, .result-line { color: var(--muted); font-size: 14px; margin: 10px 0 0; }
+.trophy-list { display: grid; gap: 10px; margin-top: 18px; }
+.trophy-card {
+  display: grid; grid-template-columns: 30px 1fr; gap: 12px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px;
+}
+.trophy-card.earned { background: var(--card-earned); border-color: #2f7a44; }
+.trophy-card:hover { border-color: var(--pink); }
+button:focus-visible, .import-btn:focus-visible, .kind-filters button:focus-visible {
+  outline: 2px solid var(--cyan); outline-offset: 2px;
+}
+.trophy-card.earned .trophy-name { text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: var(--pink); }
+.trophy-card input[type="checkbox"] { width: 22px; height: 22px; margin-top: 4px; accent-color: var(--pink); cursor: pointer; }
+.trophy-head { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.trophy-name { font-size: 18px; font-weight: 800; margin: 0; }
+.grade-badge { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em;
+  padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.grade-platinum { background: #0e4a56; color: var(--platinum); }
+.grade-gold { background: #5a4300; color: var(--gold); }
+.grade-silver { background: #3a4356; color: var(--silver); }
+.grade-bronze { background: #4d2c14; color: var(--bronze); }
+.flag { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em;
+  padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.flag-missable { background: #ff7a3d; color: #2b0e00; }
+.flag-hidden { background: #3a2360; color: #cbb8f5; }
+.flag-kind { background: #123a4d; color: var(--cyan); }
+.official { color: var(--muted); font-style: italic; margin: 4px 0 8px; }
+.official .label { font-style: normal; font-weight: 700; color: var(--text); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+.guide { margin: 0 0 8px; font-size: 15px; }
+.guide .label { font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--gold); }
+.sources { font-size: 13px; color: var(--muted); margin: 0; }
+.sources a { color: var(--cyan); }
+.count-target { font-size: 13px; color: var(--orange); font-weight: 700; margin: 0 0 6px; }
+.spoiler-hidden { color: var(--muted); font-style: italic; }
+.empty { text-align: center; color: var(--muted); padding: 30px 10px; }
+footer { margin-top: 30px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 16px; }
+@media (max-width: 640px) {
+  h1 { font-size: 36px; }
+  .search-label input { width: 100%; }
+  .stages li { padding: 12px; }
+  .trophy-card { grid-template-columns: 26px 1fr; padding: 12px; }
+}

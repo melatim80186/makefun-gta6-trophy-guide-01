@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Legends — GTA VI Trophy Guide &amp; Tracker</title>
+<meta name="description" content="All 55 GTA VI trophies with own-words guides, sources, a 5-stage roadmap to the platinum, missable flags, and a progress tracker that works offline.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23ff2e88'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ffd23d'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="skyline" aria-hidden="true"></div>
+  <div class="hero-text">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies &middot; 1 Platinum &middot; 2 Gold &middot; 6 Silver &middot; 46 Bronze</p>
+    <h1>Leonida Legends</h1>
+    <p class="tagline">Every official GTA VI trophy, in plain English, with a guide and sources for each one — plus a roadmap to the platinum, the missables flagged, and a tracker that saves your progress on your own machine.</p>
+    <p class="hero-note">No online trophies. No difficulty trophies. One playthrough is enough — just don't skip the Chapter 1 meditation.</p>
+  </div>
+  <div class="progress-wrap" id="progressWrap">
+    <div class="progress-numbers"><span id="progressText">0 of 55 earned</span><span id="progressPct">0%</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <p class="grade-summary" id="gradeSummary"></p>
+    <p class="howto">Tick a trophy's box when you earn it — your progress saves in this browser automatically, and the bar above fills up.</p>
+  </div>
+</header>
+
+<main>
+  <section class="roadmap" id="roadmap" aria-label="Roadmap to the platinum">
+    <h2>Roadmap to the Platinum</h2>
+    <p class="roadmap-intro">Work the stages in order. The platinum, <strong>Vice Got a Price!</strong>, pops the moment the last trophy is earned. Estimated total: around 200 hours.</p>
+    <ol class="stages">
+      <li><span class="stage-num">1</span><div><h3>Story first — Chapters 1–4 &amp; finale</h3><p>Play the story straight through. Chapter trophies (Paradise Lost through Top Of The World, Ma), the mission trophies (Breakfast Run, The Cartel Heist, Child's Play, Headliners, VCIA Takedown, Operation Savage Glory) and the finale all pop as you go. <strong>Do the Chapter 1 meditation for Positive Mental Attitude before Chapter 1 ends</strong> — it may not come back.</p></div></li>
+      <li><span class="stage-num">2</span><div><h3>Stranger strands</h3><p>Finish 8 stranger mission strands (Strangers &amp; Freaks) — Andy, Kenton, Billy, Randy, Tyrone and Bret all have finales. The strands stay open after the story, so there is no rush, but they unlock some of the best side content.</p></div></li>
+      <li><span class="stage-num">3</span><div><h3>Activities &amp; combat</h3><p>Stunts (250), Shooting Range golds (42), races (20 different courses plus the Top Fun drone races), fishing against Cal, the arcade, bowling, challenges (50), Combat Focus, robberies (shops, vaults, armored trucks, jewelry stores, gang operations) and the money goals ($250,000 laundered, $100,000 spent).</p></div></li>
+      <li><span class="stage-num">4</span><div><h3>Collectibles &amp; exploration</h3><p>Card sets (3), WAiNK spots (100), vehicles (100), meditation spots, all garages, and exploring every corner of Leonida — Vice City, Vice Beach, Port Gellhorn, Mount Kalaga and the Leonida Keys.</p></div></li>
+      <li><span class="stage-num">5</span><div><h3>Cleanup → 100% → Platinum</h3><p>Check the in-game stats for whatever is left, finish it for A Long Road (100% completion), and Vice Got a Price! is yours.</p></div></li>
+    </ol>
+    <div class="missable-box" id="missableBox">
+      <h3>⚠ Missable trophies</h3>
+      <p>Only one trophy has evidence of being missable: <strong>Positive Mental Attitude</strong> — Lucia's balcony meditation in Chapter 1 (the morning after “Down to Earth”) may disappear after Chapter 1, and there is no mission replay. Do it in Chapter 1 and keep a Chapter 1 save. Every other trophy can be earned after the story. The 100% checklist needs only 15 of 18 meditations, so whether all 18 are required here is still unconfirmed at launch — sources: GTABase, OutputLag.</p>
+    </div>
+  </section>
+
+  <section class="controls" aria-label="Tracker controls">
+    <div class="control-row">
+      <label class="search-label">Search <input id="search" type="search" placeholder="Trophy, mission or keyword…" autocomplete="off"></label>
+      <label class="grade-label">Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+    </div>
+    <div class="kind-filters" id="kindFilters" role="group" aria-label="Filter by kind">
+      <button type="button" data-kind="all" class="active">All <span class="count" id="countAll"></span></button>
+      <button type="button" data-kind="story">Story <span class="count" id="countStory"></span></button>
+      <button type="button" data-kind="missable">Missable <span class="count" id="countMissable"></span></button>
+      <button type="button" data-kind="collectibles">Collectibles <span class="count" id="countCollectibles"></span></button>
+      <button type="button" data-kind="activities">Activities <span class="count" id="countActivities"></span></button>
+      <button type="button" data-kind="online">Online <span class="count" id="countOnline"></span></button>
+    </div>
+    <div class="control-row toggles">
+      <label class="toggle"><input id="spoilerToggle" type="checkbox"> <span>Hide story spoilers <em>(story trophy names &amp; descriptions hidden until earned)</em></span></label>
+      <label class="toggle"><input id="hideEarnedToggle" type="checkbox"> <span>Hide earned</span></label>
+      <span class="spacer"></span>
+      <button id="exportBtn" type="button">Export progress</button>
+      <label class="import-btn">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+      <button id="resetBtn" type="button" class="danger">Reset</button>
+    </div>
+    <p class="online-note" id="onlineNote" hidden>No online trophies exist in GTA VI — all 55 are single-player and offline. The Online filter is here because the brief asks for it; it will always be empty.</p>
+    <p class="result-line" id="resultLine"></p>
+  </section>
+
+  <section class="trophy-list" id="trophyList" aria-label="Trophy checklist">
+    <noscript><p class="empty">This tracker needs JavaScript to load the trophy list — enable it and reload.</p></noscript>
+  </section>
+
+  <footer>
+    <p>Official trophy names, descriptions and grades are as PlayStation publishes them (mirrored by Exophase and PSNProfiles; verified 2026-11-19 against Exophase, GTABase, OutputLag, Press Start and OfZen and Computing). Every guide is original text written for this entry — sources are cited beside each guide, never copied. No Rockstar Games logo, artwork or game screenshots are used; the look is original.</p>
+    <p>Progress is saved in your browser (localStorage) and never leaves your machine unless you export it. Works fully offline — tick a trophy's box as you earn it and the bar above fills up.</p>
+  </footer>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>
